@@ -1,0 +1,17 @@
+//
+//  CYFiOSProject.pch
+//  CYFProject
+//
+//  Created by tsaievan on 21/2/2019.
+//  Copyright © 2019 tsaievan. All rights reserved.
+//
+
+#ifndef CYFiOSProject_pch
+#define CYFiOSProject_pch
+
+#import <YYCategories.h>
+
+
+#define CYFWeak(type) __weak typeof(type) weak##type = type
+
+#endif /* CYFiOSProject_pch */

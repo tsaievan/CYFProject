@@ -73,7 +73,10 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
     [self setTitle:buttonTitle forState:UIControlStateNormal];
     [self setTitleColor:normalColor forState:UIControlStateNormal];
     [self setTitleColor:selectColor forState:UIControlStateHighlighted];
+    [self setBackgroundImage:[UIImage imageWithColor:normalBGColor] forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage imageWithColor:selectBGColor] forState:UIControlStateHighlighted];
     
+    CYFWeak(self);
     
     return self;
 }

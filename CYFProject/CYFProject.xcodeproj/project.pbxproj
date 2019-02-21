@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57379EA9221E4C5300A7924F /* UIView+GestureCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379EA8221E4C5300A7924F /* UIView+GestureCallback.m */; };
 		5739E14E221DA09D005774BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5739E14D221DA09D005774BD /* AppDelegate.m */; };
 		5739E151221DA09D005774BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5739E150221DA09D005774BD /* ViewController.m */; };
 		5739E154221DA09D005774BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5739E152221DA09D005774BD /* Main.storyboard */; };
@@ -19,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		0B937D1C26883EC2A23CE14F /* Pods-CYFProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYFProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CYFProject/Pods-CYFProject.debug.xcconfig"; sourceTree = "<group>"; };
+		57379EA6221E389500A7924F /* CYFiOSProject.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYFiOSProject.pch; sourceTree = "<group>"; };
+		57379EA7221E4C5300A7924F /* UIView+GestureCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GestureCallback.h"; sourceTree = "<group>"; };
+		57379EA8221E4C5300A7924F /* UIView+GestureCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureCallback.m"; sourceTree = "<group>"; };
 		5739E149221DA09D005774BD /* CYFProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYFProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5739E14C221DA09D005774BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5739E14D221DA09D005774BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -83,6 +87,9 @@
 				5739E150221DA09D005774BD /* ViewController.m */,
 				5739E162221DA0CD005774BD /* UIButton+CYF.h */,
 				5739E163221DA0CD005774BD /* UIButton+CYF.m */,
+				57379EA7221E4C5300A7924F /* UIView+GestureCallback.h */,
+				57379EA8221E4C5300A7924F /* UIView+GestureCallback.m */,
+				57379EA6221E389500A7924F /* CYFiOSProject.pch */,
 				5739E152221DA09D005774BD /* Main.storyboard */,
 				5739E155221DA09F005774BD /* Assets.xcassets */,
 				5739E157221DA09F005774BD /* LaunchScreen.storyboard */,
@@ -198,6 +205,7 @@
 			files = (
 				5739E164221DA0CD005774BD /* UIButton+CYF.m in Sources */,
 				5739E151221DA09D005774BD /* ViewController.m in Sources */,
+				57379EA9221E4C5300A7924F /* UIView+GestureCallback.m in Sources */,
 				5739E15C221DA09F005774BD /* main.m in Sources */,
 				5739E14E221DA09D005774BD /* AppDelegate.m in Sources */,
 			);
@@ -343,6 +351,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CYFProject/CYFiOSProject.pch;
 				INFOPLIST_FILE = CYFProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -360,6 +370,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CYFProject/CYFiOSProject.pch;
 				INFOPLIST_FILE = CYFProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
