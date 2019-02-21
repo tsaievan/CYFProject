@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void (^longPressCallback)(UILongPressGestureRecognizer *recognizer, NSString *gestureId);
 
-@property (nonatomic, strong) UIGestureRecognizer *recognizer;
+@property (nonatomic, strong) UIGestureRecognizer *gesture;
 
 @property (nonatomic, copy) NSString *gestureId;
 
