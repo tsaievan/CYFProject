@@ -65,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///< pan
 - (NSString *)addPanGestureRecognizer:(void(^)(UIPanGestureRecognizer *recognizer, NSString *gestureId))panCallback;
 
-- (NSString *)addPanGestureRecognizer:(void(^)(UIPanGestureRecognizer *recognizer, NSString *gestureId))tapCallback minimumNumberOfTouches:(NSUInteger)minimumNumberOfTouches maximumNumberOfTouches:(NSUInteger)maximumNumberOfTouches;
+- (NSString *)addPanGestureRecognizer:(void(^)(UIPanGestureRecognizer *recognizer, NSString *gestureId))panCallback minimumNumberOfTouches:(NSUInteger)minimumNumberOfTouches maximumNumberOfTouches:(NSUInteger)maximumNumberOfTouches;
 
 - (void)addPanGestureRecognizer:(void(^)(UIPanGestureRecognizer *recognizer, NSString *gestureId))panCallback panGestureId:(NSString *)panGestureId;
 

@@ -17,6 +17,8 @@ const NSString *UIView_GestureCallback_gestureKeysHashKey = @"UIView_GestureCall
 
 @implementation UIView (GestureCallback)
 
+#pragma mark - ##### TAP
+#pragma mark - add tap gestures
 - (NSString *)addTapGestureRecognizer:(void (^)(UITapGestureRecognizer * _Nonnull, NSString * _Nonnull))tapCallback {
     NSString *rand;
     do {
@@ -40,7 +42,7 @@ const NSString *UIView_GestureCallback_gestureKeysHashKey = @"UIView_GestureCall
 }
 
 - (void)addTapGestureRecognizer:(void (^)(UITapGestureRecognizer * _Nonnull, NSString * _Nonnull))tapCallback tapGestureId:(NSString *)tapGestureId numberOfTapsRequired:(NSInteger)numberOfTapsRequired numberOfTouchesRequired:(NSInteger)numberOfTouchesRequired {
-    UIGestureRecognizer *r = [self.gestures objectForKey:tapGestureId];
+    GestureCallbackValues *r = [self.gestures objectForKey:tapGestureId];
     if (r != nil) {
         [self removeTapGesture:tapGestureId];
     }
@@ -75,6 +77,143 @@ const NSString *UIView_GestureCallback_gestureKeysHashKey = @"UIView_GestureCall
     for (GestureCallbackValues *v in arr) {
         if ([v.gesture isMemberOfClass:[UITapGestureRecognizer class]]) {
             [self removeTapGesture:v.gestureId];
+        }
+    }
+}
+
+#pragma mark - tap handler
+
+- (void)tapHandler:(UITapGestureRecognizer *)recognizer {
+    GestureCallbackValues *v = [self.gestureKeysHash objectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)recognizer.hash]];
+    if (v != nil) {
+        if (v.tapCallback) {
+            v.tapCallback((UITapGestureRecognizer *)v.gesture, v.gestureId);
+        }
+    }
+}
+
+#pragma mark - ##### PINCH
+#pragma mark - add pinch gestures
+- (NSString *)addPinchGestureRecognizer:(void(^)(UIPinchGestureRecognizer *recognizer, NSString *gestureId))pinchCallback {
+    NSString *rand;
+    do {
+        rand = [self randomStringWithLength:12];
+    } while ([self.gestures objectForKey:rand] != nil);
+    [self addPinchGestureRecognizer:pinchCallback pinchGestureId:rand];
+    return rand;
+}
+
+
+- (void)addPinchGestureRecognizer:(void(^)(UIPinchGestureRecognizer *recognizer, NSString *gestureId))pinchCallback pinchGestureId:(NSString *)pinchGestureId {
+    GestureCallbackValues *r = [self.gestures objectForKey:pinchGestureId];
+    if (r != nil) {
+        [self removePinchGesture:pinchGestureId];
+    }
+    UIPinchGestureRecognizer *tg = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchHandler:)];
+    GestureCallbackValues *v = [GestureCallbackValues new];
+    v.gesture = tg;
+    v.pinchCallback = [pinchCallback copy];
+    v.gestureId = pinchGestureId;
+    
+    [self.gestureKeysHash setValue:v forKey:[NSString stringWithFormat:@"%lu", (unsigned long)v.gesture.hash]];
+    [self.gestures setValue:v forKey:pinchGestureId];
+    [self addGestureRecognizer:tg];
+}
+
+#pragma mark - remove pinch gestures
+- (void)removePinchGesture:(NSString *)pinchGestureId {
+    GestureCallbackValues *v = [self.gestures objectForKey:pinchGestureId];
+    if (v != nil) {
+        [self.gestures removeObjectForKey:pinchGestureId];
+        [self.gestureKeysHash removeObjectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)v.gesture.hash]];
+        [self removeGestureRecognizer:v.gesture];
+    }
+}
+
+- (void)removeAllPinchGestures {
+    NSArray *arr = self.gestures.allValues;
+    for (GestureCallbackValues *v in arr) {
+        if ([v isMemberOfClass:[UIPinchGestureRecognizer class]]) {
+            [self removePinchGesture:v.gestureId];
+        }
+    }
+}
+
+#pragma mark - pinch handler
+- (void)pinchHandler:(UIPinchGestureRecognizer *)recognizer {
+    GestureCallbackValues *v = [self.gestureKeysHash objectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)recognizer.hash]];
+    if (v != nil) {
+        if (v.pinchCallback) {
+            v.pinchCallback((UIPinchGestureRecognizer *)v.gesture, v.gestureId);
+        }
+    }
+}
+
+#pragma mark - #####PAN
+#pragma mark - add pan gestures
+- (NSString *)addPanGestureRecognizer:(void(^)(UIPanGestureRecognizer *recognizer, NSString *gestureId))panCallback {
+    NSString *rand;
+    do {
+        rand = [self randomStringWithLength:12];
+    } while ([self.gestures objectForKey:rand] != nil);
+    [self addPanGestureRecognizer:panCallback panGestureId:rand];
+    return rand;
+}
+
+- (NSString *)addPanGestureRecognizer:(void(^)(UIPanGestureRecognizer *recognizer, NSString *gestureId))panCallback minimumNumberOfTouches:(NSUInteger)minimumNumberOfTouches maximumNumberOfTouches:(NSUInteger)maximumNumberOfTouches {
+    NSString *rand;
+    do {
+        rand = [self randomStringWithLength:12];
+    } while ([self.gestures objectForKey:rand] != nil);
+    [self addPanGestureRecognizer:panCallback panGestureId:rand minimumNumberOfTouches:minimumNumberOfTouches maximumNumberOfTouches:maximumNumberOfTouches];
+    return rand;
+}
+
+- (void)addPanGestureRecognizer:(void(^)(UIPanGestureRecognizer *recognizer, NSString *gestureId))panCallback panGestureId:(NSString *)panGestureId {
+    [self addPanGestureRecognizer:panCallback panGestureId:panGestureId minimumNumberOfTouches:1 maximumNumberOfTouches:1];
+}
+
+- (void)addPanGestureRecognizer:(void(^)(UIPanGestureRecognizer *recognizer, NSString *gestureId))panCallback panGestureId:(NSString *)panGestureId minimumNumberOfTouches:(NSUInteger)minimumNumberOfTouches maximumNumberOfTouches:(NSUInteger)maximumNumberOfTouches {
+    GestureCallbackValues *r = [self.gestures objectForKey:panGestureId];
+    if (r != nil) {
+        [self removePanGesture:panGestureId];
+    }
+    UIPanGestureRecognizer *tg = [[UIPanGestureRecognizer alloc] initWithTarget:self action: @selector(panHandler:)];
+    tg.minimumNumberOfTouches = minimumNumberOfTouches;
+    tg.maximumNumberOfTouches = maximumNumberOfTouches;
+    
+    GestureCallbackValues *v = [GestureCallbackValues new];
+    v.gesture = tg;
+    v.gestureId = panGestureId;
+    v.panCallback = [panCallback copy];
+    [self.gestures setValue:v forKey:panGestureId];
+    [self.gestureKeysHash setValue:v forKey:[NSString stringWithFormat:@"%lu", (unsigned long)v.gesture.hash]];
+    [self addGestureRecognizer:v.gesture];
+}
+
+- (void)removePanGesture:(NSString *)panGestureId {
+    GestureCallbackValues *v = [self.gestures objectForKey:panGestureId];
+    if (v != nil) {
+        [self.gestures removeObjectForKey:panGestureId];
+        [self.gestureKeysHash removeObjectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)v.gesture.hash]];
+        [self removeGestureRecognizer:v.gesture];
+    }
+}
+
+- (void)removeAllPanGestures {
+    NSArray *arr = self.gestures.allValues;
+    for (GestureCallbackValues *v in arr) {
+        if ([v.gesture isMemberOfClass:[UIPanGestureRecognizer class]]) {
+            [self removePanGesture:v.gestureId];
+        }
+    }
+}
+
+- (void)panHandler:(UIPanGestureRecognizer *)recognizer {
+    GestureCallbackValues *v = [self.gestureKeysHash objectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)recognizer.hash]];
+    if (v != nil) {
+        if (v.panCallback) {
+            v.panCallback((UIPanGestureRecognizer *)v.gesture, v.gestureId);
         }
     }
 }
