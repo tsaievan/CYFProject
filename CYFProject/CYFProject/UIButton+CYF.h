@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^TouchedBlock)(NSInteger tag);
 
@@ -62,4 +61,13 @@ typedef void (^TouchedBlock)(NSInteger tag);
                     doneBlock:(void(^)(UIButton *))doneBlock;
 @end
 
-NS_ASSUME_NONNULL_END
+
+IB_DESIGNABLE
+@interface CYFRoundedButton : UIButton
+
+@property (nonatomic, assign) IBInspectable NSUInteger style;
+
+@property (nonatomic, assign) IBInspectable CGFloat yf_cornerRadius;
+
+@end
+

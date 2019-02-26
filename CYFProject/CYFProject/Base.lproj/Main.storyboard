@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,230 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nt7-eY-i9P" customClass="CYFRoundedButton">
+                                <rect key="frame" x="30" y="120" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="F2Q-3j-uRx"/>
+                                    <constraint firstAttribute="width" constant="150" id="yTm-bD-PQg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAG-e2-oe9" customClass="CYFRoundedButton">
+                                <rect key="frame" x="30" y="194" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="i10-4l-hJd"/>
+                                    <constraint firstAttribute="width" constant="150" id="v80-H7-2ep"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFx-QX-Y66" customClass="CYFRoundedButton">
+                                <rect key="frame" x="195" y="120" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="K0N-LH-NCn"/>
+                                    <constraint firstAttribute="height" constant="44" id="dLj-0J-IUw"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1Y-oc-cMP" customClass="CYFRoundedButton">
+                                <rect key="frame" x="195" y="194" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="aV6-rS-R4U"/>
+                                    <constraint firstAttribute="height" constant="44" id="o3C-0Z-sfI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD9-DH-tIr" customClass="CYFRoundedButton">
+                                <rect key="frame" x="30" y="268" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Eit-Wl-8ML"/>
+                                    <constraint firstAttribute="width" constant="150" id="P1T-7h-CDW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTh-TE-fp9" customClass="CYFRoundedButton">
+                                <rect key="frame" x="195" y="268" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="J2e-8h-Vy8"/>
+                                    <constraint firstAttribute="width" constant="150" id="jrU-Lv-1uJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-32-Dgb" customClass="CYFRoundedButton">
+                                <rect key="frame" x="30" y="342" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KOy-wF-x2E"/>
+                                    <constraint firstAttribute="width" constant="150" id="bAR-IH-oOQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWE-Ho-jBX" customClass="CYFRoundedButton">
+                                <rect key="frame" x="195" y="342" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="LeJ-gk-FMr"/>
+                                    <constraint firstAttribute="height" constant="44" id="REL-vr-WPm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJQ-1p-iuH" customClass="CYFRoundedButton">
+                                <rect key="frame" x="30" y="416" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4TY-gw-fFe"/>
+                                    <constraint firstAttribute="width" constant="150" id="Vhu-Iq-6Kr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chH-Og-MYR" customClass="CYFRoundedButton">
+                                <rect key="frame" x="195" y="416" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="KmM-NG-bb6"/>
+                                    <constraint firstAttribute="height" constant="44" id="ym6-Uc-svK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lj-Eu-ND8" customClass="CYFRoundedButton">
+                                <rect key="frame" x="30" y="490" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.97382396319999998" green="1" blue="0.53244202159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dOc-XP-hVH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="yf_cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tAG-e2-oe9" firstAttribute="centerX" secondItem="Nt7-eY-i9P" secondAttribute="centerX" id="0uH-4v-SRZ"/>
+                            <constraint firstItem="chH-Og-MYR" firstAttribute="centerX" secondItem="UWE-Ho-jBX" secondAttribute="centerX" id="4XS-Ay-a1c"/>
+                            <constraint firstItem="7lj-Eu-ND8" firstAttribute="leading" secondItem="OJQ-1p-iuH" secondAttribute="leading" id="60q-pb-Whm"/>
+                            <constraint firstItem="p1Y-oc-cMP" firstAttribute="centerX" secondItem="JFx-QX-Y66" secondAttribute="centerX" id="68B-iz-gOo"/>
+                            <constraint firstItem="OJQ-1p-iuH" firstAttribute="centerX" secondItem="1Fd-32-Dgb" secondAttribute="centerX" id="7a6-H0-ZdH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JFx-QX-Y66" secondAttribute="trailing" constant="30" id="EiJ-vk-jPY"/>
+                            <constraint firstItem="7lj-Eu-ND8" firstAttribute="top" secondItem="OJQ-1p-iuH" secondAttribute="bottom" constant="30" id="Kk4-oH-9ah"/>
+                            <constraint firstItem="Nt7-eY-i9P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="LyW-P4-jV5"/>
+                            <constraint firstItem="7lj-Eu-ND8" firstAttribute="trailing" secondItem="chH-Og-MYR" secondAttribute="trailing" id="Nh6-bR-vR2"/>
+                            <constraint firstItem="UWE-Ho-jBX" firstAttribute="centerX" secondItem="dTh-TE-fp9" secondAttribute="centerX" id="PVU-Cq-m6g"/>
+                            <constraint firstItem="p1Y-oc-cMP" firstAttribute="centerY" secondItem="tAG-e2-oe9" secondAttribute="centerY" id="YnJ-y7-H2R"/>
+                            <constraint firstItem="Nt7-eY-i9P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="aem-Oc-cTs"/>
+                            <constraint firstItem="tAG-e2-oe9" firstAttribute="top" secondItem="Nt7-eY-i9P" secondAttribute="bottom" constant="30" id="bMg-Me-dNl"/>
+                            <constraint firstItem="UWE-Ho-jBX" firstAttribute="centerY" secondItem="1Fd-32-Dgb" secondAttribute="centerY" id="c9Q-Ym-gPk"/>
+                            <constraint firstItem="dTh-TE-fp9" firstAttribute="centerY" secondItem="zD9-DH-tIr" secondAttribute="centerY" id="cF6-ig-TWU"/>
+                            <constraint firstItem="zD9-DH-tIr" firstAttribute="top" secondItem="tAG-e2-oe9" secondAttribute="bottom" constant="30" id="daU-NG-2YO"/>
+                            <constraint firstItem="zD9-DH-tIr" firstAttribute="centerX" secondItem="tAG-e2-oe9" secondAttribute="centerX" id="jSp-s9-7t2"/>
+                            <constraint firstItem="1Fd-32-Dgb" firstAttribute="centerX" secondItem="zD9-DH-tIr" secondAttribute="centerX" id="kYm-oQ-rf8"/>
+                            <constraint firstItem="OJQ-1p-iuH" firstAttribute="top" secondItem="1Fd-32-Dgb" secondAttribute="bottom" constant="30" id="mLX-Rm-5bz"/>
+                            <constraint firstItem="1Fd-32-Dgb" firstAttribute="top" secondItem="zD9-DH-tIr" secondAttribute="bottom" constant="30" id="pMq-RP-cRR"/>
+                            <constraint firstItem="dTh-TE-fp9" firstAttribute="centerX" secondItem="p1Y-oc-cMP" secondAttribute="centerX" id="qdb-qL-cge"/>
+                            <constraint firstItem="chH-Og-MYR" firstAttribute="centerY" secondItem="OJQ-1p-iuH" secondAttribute="centerY" id="uJP-Lf-gjE"/>
+                            <constraint firstItem="JFx-QX-Y66" firstAttribute="centerY" secondItem="Nt7-eY-i9P" secondAttribute="centerY" id="vHU-Vd-D4m"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="109.29535232383809"/>
         </scene>
     </scenes>
 </document>
